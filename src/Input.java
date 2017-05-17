@@ -135,5 +135,24 @@ public class Input {
         return userInput;
     }
 
+    public double getdouble(String prompt) {
+        boolean userGotItRight = false;
+        double userInput=0;
+
+        do {
+            System.out.println(prompt);
+
+            if(scanner.hasNextDouble()) {//<-- get in if its a double
+                userInput = scanner.nextDouble();
+                userGotItRight = true;
+            }
+            else {
+                scanner.next();
+            };
+        }while (!userGotItRight);
+
+        return userInput;
+    }
+
 
 }
