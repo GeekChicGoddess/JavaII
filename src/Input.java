@@ -9,10 +9,10 @@ public class Input {
 
     public Input() {
 
-        scanner = new Scanner(System.in); // instance of Object, scanner property set to new instance of Scanner class
+        this.scanner = new Scanner(System.in); // instance of Object, scanner property set to new instance of Scanner class
     }
     public String getString() {
-       getInt("Enter a string");
+       return getString("Enter a string");
     };
 
     public String getString(String prompt) {
@@ -22,7 +22,7 @@ public class Input {
     };
 
     public boolean yesNo() {
-        yesNo("Yes or no?");
+       return yesNo("Yes or no?");
     };
 
     public boolean yesNo(String prompt) {
@@ -55,7 +55,7 @@ public class Input {
     }
 
     public int getInt() {
-     getInt("Enter an interger");
+     return getInt("Enter an interger");
     }
 
     public int getInt(String prompt) {
@@ -98,7 +98,7 @@ public class Input {
     }
 
     public double getdouble() {
-     getdouble("Enter a double"));
+     return getdouble("Enter a double");
     }
 
     public double getdouble(String prompt) {
