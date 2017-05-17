@@ -1,7 +1,7 @@
 /**
  * Created by melodytempleton on 5/16/17.
  */
-public class OOPExercises_Person {
+public class Person {
 
     private String name = "private name";
 
@@ -18,7 +18,7 @@ public class OOPExercises_Person {
         System.out.println("Hello "+ name);
     };
 
-    public OOPExercises_Person (String name){
+    public Person(String name){
         this.name = name;
     }
 
@@ -26,7 +26,7 @@ public class OOPExercises_Person {
 
     public static void main(String[] args) {
 
-        OOPExercises_Person Melody = new OOPExercises_Person("Melody");
+        Person Melody = new Person("Melody");
 
         Melody.sayHello();
         System.out.println(Melody.name);
@@ -35,6 +35,14 @@ public class OOPExercises_Person {
         Melody.name = "NewName";
         Melody.setName("Crystal");
         Melody.sayHello();
+
+        Person person1 = new Person("John");
+        Person person2 = person1;
+        System.out.println(person1.getName());
+        System.out.println(person2.getName());
+        person2.setName("Jane");
+        System.out.println(person1.getName());
+        System.out.println(person2.getName());
 
     }
 }
