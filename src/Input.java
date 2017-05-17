@@ -12,9 +12,7 @@ public class Input {
         scanner = new Scanner(System.in); // instance of Object, scanner property set to new instance of Scanner class
     }
     public String getString() {
-        System.out.println("Enter a string");
-        String userInput = scanner.nextLine();
-        return userInput;
+       getInt("Enter a string");
     };
 
     public String getString(String prompt) {
@@ -24,12 +22,7 @@ public class Input {
     };
 
     public boolean yesNo() {
-        System.out.println("Yes or no?");
-        String yesOrNoAnswer = scanner.next();
-        if (yesOrNoAnswer.equalsIgnoreCase("y") || yesOrNoAnswer.equalsIgnoreCase("yes")){
-            return true;
-        }
-        else return false;
+        yesNo("Yes or no?");
     };
 
     public boolean yesNo(String prompt) {
@@ -62,19 +55,7 @@ public class Input {
     }
 
     public int getInt() {
-        boolean userGotItRight = false;
-        int userInput=0;
-        do {
-            System.out.println("Enter an interger");
-            if (scanner.hasNextInt()) {//<-- get in if its a number
-                userInput = scanner.nextInt();
-                userGotItRight = true;
-            } else {
-                scanner.next();
-            }
-        } while (!userGotItRight);
-
-        return userInput;
+     getInt("Enter an interger");
     }
 
     public int getInt(String prompt) {
@@ -117,22 +98,7 @@ public class Input {
     }
 
     public double getdouble() {
-        boolean userGotItRight = false;
-        double userInput=0;
-
-        do {
-            System.out.println("Enter a double");
-
-            if(scanner.hasNextDouble()) {//<-- get in if its a double
-                userInput = scanner.nextDouble();
-                    userGotItRight = true;
-                }
-            else {
-                scanner.next();
-            };
-        }while (!userGotItRight);
-
-        return userInput;
+     getdouble("Enter a double"));
     }
 
     public double getdouble(String prompt) {

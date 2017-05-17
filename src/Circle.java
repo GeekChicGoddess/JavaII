@@ -4,11 +4,12 @@
 public class Circle {
 
     private double radius; // radius property/attribute/field
-
+    private static int numberOfCircles = 0;
 
     public Circle(double radius){
 
     this.radius = radius;
+    numberOfCircles++;
 
     }
 
@@ -20,6 +21,10 @@ public class Circle {
     public double getCircumference(){
         double circumference = 2 * 3.14 * radius;
         return circumference;
+    }
+
+    public static int getNumberOfCircles(){
+        return numberOfCircles;
     }
 
 }

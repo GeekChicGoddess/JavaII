@@ -3,7 +3,7 @@
  */
 public class CircleApp {
 
-    private static int numberOfCircles = 0;
+
 
     public static void makingCircles (){
         boolean keepMakingCircles = true;
@@ -14,11 +14,11 @@ public class CircleApp {
             Circle userCircle = new Circle(radius);
             System.out.println("The area is " + userCircle.getArea());
             System.out.println("The circumference is " + userCircle.getCircumference());
-            numberOfCircles++;
+
             keepMakingCircles = usersInput.yesNo("Do you want to make another circle?");
         }
 
-        System.out.println("You have made "+numberOfCircles+" circles.");
+        System.out.println("You have made "+Circle.getNumberOfCircles()+" circles.");
 
     }
 
