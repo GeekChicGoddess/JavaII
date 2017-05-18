@@ -14,7 +14,7 @@ public class NameGenerator {
 
     public static String selectRandomlyFromArray(String[] array) {
 
-        int randomSelector = (int) Math.floor(Math.random() * 10);
+        int randomSelector = (int) Math.floor(Math.random() * nouns.length);
         return array[randomSelector];
 
     }

@@ -1,6 +1,7 @@
 package Arrays;
 
 import java.util.Arrays;
+import java.util.Scanner;
 
 /**
  * Created by melodytempleton on 5/18/17.
@@ -11,8 +12,8 @@ public class MoviesApplication {
 
 
 
-   public static Input viewerInput = new Input();
-    private static Movie[] movieList;
+    public static Input viewerInput = new Input();
+
 
     public static int displayMenu(){ // show the menu to the viewer and ask for choice
         String menu = "What would you like to do?\n" +
@@ -23,17 +24,18 @@ public class MoviesApplication {
                 "3 - view movies in the drama category\n" +
                 "4 - view movies in the horror category\n" +
                 "5 - view movies in the scifi category\n"+
-                "6 - view movies in the musical category";
+                "6 - view movies in the musical category\n"+
+                "7 - add a movie to the list";
         System.out.println(menu);
-        return viewerInput.getInt(0, 6, "Please enter menu choice");
+        return viewerInput.getInt(0, 7, "Please enter menu choice");
     }
 
     public static void viewTheMovies(Movie[] movieList){
 
         for(int i = 0; i < movieList.length; i++) {
-                System.out.printf("%-40s%s%n", movieList[i].getName(), movieList[i].getCategory());
-            }
-            runMovieApplication(movieList);
+            System.out.printf("%-40s%s%n", movieList[i].getName(), movieList[i].getCategory());
+        }
+        runMovieApplication(movieList);
     }
 
     public static void viewTheMovies(Movie[] movieList, String category){
@@ -46,26 +48,52 @@ public class MoviesApplication {
         runMovieApplication(movieList);
     }
 
+    public static void addAMovie (Movie [] movieList){
+
+        String filmName = viewerInput.getString("What is the name of the film?");
+
+        String filmCategory = viewerInput.getString("What is the category?");
+        Movie[] newList = new Movie[movieList.length + 1];
+
+        for (int i = 0; i < movieList.length; i++) {
+            newList[i] = movieList[i];
+        }
+        newList[movieList.length] = new Movie (filmName, filmCategory);
+        System.out.println("Here is the new movie list");
+        viewTheMovies(newList);
+        displayMenu();
+
+    }
+
     public static void runMovieApplication(Movie[] movieList){
 
         int option = displayMenu();
 
         switch (option){
-             case 0:
-                 System.exit(0);
-             case 1:
-                 viewTheMovies(movieList);
-             case 2:
-                 viewTheMovies(movieList, "animated");
-             case 3:
+            case 0:
+                System.exit(0);
+            case 1:
+                viewTheMovies(movieList);
+                break;
+            case 2:
+                viewTheMovies(movieList, "animated");
+                break;
+            case 3:
                 viewTheMovies(movieList, "drama");
-             case 4:
-                 viewTheMovies(movieList, "horror");
-             case 5:
-                 viewTheMovies(movieList, "scifi");
-             case 6:
-                 viewTheMovies(movieList, "musical");
-     }
+                break;
+            case 4:
+                viewTheMovies(movieList, "horror");
+                break;
+            case 5:
+                viewTheMovies(movieList, "scifi");
+                break;
+            case 6:
+                viewTheMovies(movieList, "musical");
+                break;
+            case 7 :
+                addAMovie(movieList);
+                break;
+        }
 
 
     }

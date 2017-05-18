@@ -50,6 +50,7 @@ public class Input {
                 userInput = scanner.nextInt();
                 if (userInput >= min && userInput <= max){
                     userGotItRight = true;
+                    scanner.nextLine();
                     return userInput;
                 }
             }
@@ -57,6 +58,7 @@ public class Input {
                 scanner.next();
             };
         }while (!userGotItRight);
+
         return userInput;
     }
 
