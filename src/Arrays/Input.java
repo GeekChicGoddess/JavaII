@@ -1,3 +1,5 @@
+package Arrays;
+
 import java.util.Scanner;
 
 /**
@@ -34,11 +36,15 @@ public class Input {
         else return false;
     };
 
-    public int getInt(int min, int max) {
+    public int getInt (int min, int max){
+         return getInt(min, max, "Enter an integer");
+    }
+
+    public int getInt(int min, int max, String prompt) {
         boolean userGotItRight = false;
         int userInput =0;
         do {
-            System.out.println("Enter an interger between " + min + " and " + max);
+            System.out.println(prompt + " between " + min + " and " + max);
 
             if(scanner.hasNextInt()) {//<-- get in if its a number
                 userInput = scanner.nextInt();

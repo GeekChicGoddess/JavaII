@@ -15,6 +15,15 @@ public class Movie {
     }
 
 
+    public String getName(){
+        String moveieName = this.name;
+        return moveieName;
+    }
+
+    public String getCategory(){
+        String movieCategory = this.category;
+        return movieCategory;
+    }
 
 
 }
