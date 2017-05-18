@@ -53,14 +53,13 @@ public class MoviesApplication {
         String filmName = viewerInput.getString("What is the name of the film?");
 
         String filmCategory = viewerInput.getString("What is the category?");
-        Movie[] newList = new Movie[movieList.length + 1];
 
-        for (int i = 0; i < movieList.length; i++) {
-            newList[i] = movieList[i];
-        }
-        newList[movieList.length] = new Movie (filmName, filmCategory);
+        movieList = Arrays.copyOf(movieList, movieList.length+1);
+
+        movieList[movieList.length-1]= new Movie (filmName, filmCategory);
+
         System.out.println("Here is the new movie list");
-        viewTheMovies(newList);
+        viewTheMovies(movieList);
         displayMenu();
 
     }
