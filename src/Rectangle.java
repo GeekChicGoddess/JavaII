@@ -1,25 +1,30 @@
 /**
  * Created by melodytempleton on 5/19/17.
  */
-public class Rectangle {
+public class Rectangle extends Quadralateral implements Measurable{
 
-    private double length;
-    private double width;
 
-    public double getArea(){
-        return length * width;
+    public Rectangle(double width, double length) {
+        super(width, length);
     }
 
-    public double getPerimeter(){
-        return (2*length)+(2*width);
+    @Override
+    public double getPerimeter() {
+        return (2* width) + (2*length);
     }
 
-    public Rectangle (double length, double width){
-
-        this.length  = length;
-        this.width = width;
-
+    @Override
+    public double getArea() {
+        return (width*length);
     }
 
+    @Override
+    public double setWidth() {
+        return 0;
+    }
 
+    @Override
+    public double setLength() {
+        return 0;
+    }
 }
