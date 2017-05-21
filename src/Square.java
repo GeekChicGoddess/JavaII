@@ -8,6 +8,7 @@ class Square extends Quadralateral{
         super(side, side);
     }
 
+
     @Override
     public double getPerimeter() {
         return (4*width);
@@ -27,4 +28,6 @@ class Square extends Quadralateral{
     public double setLength() {
         return 0;
     }
+
+
 }
