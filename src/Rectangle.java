@@ -5,12 +5,18 @@ public class Rectangle extends Quadralateral implements Measurable{
 
 
     public Rectangle(double width, double length) {
+
         super(width, length);
     }
 
     public double setWidth(double width){
         this.width = width;
         return width;
+    }
+
+    public double setLength(double length){
+        this.length = length;
+        return length;
     }
 
 
@@ -24,13 +30,5 @@ public class Rectangle extends Quadralateral implements Measurable{
         return (width*length);
     }
 
-    @Override
-    public double setWidth() {
-        return 0;
-    }
 
-    @Override
-    public double setLength() {
-        return 0;
-    }
 }
