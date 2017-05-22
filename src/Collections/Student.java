@@ -22,6 +22,13 @@ public class Student {
 
     }
 
+    public void printGrades(){
+        for (double grade : grades){
+            System.out.println(grade);
+        }
+
+    }
+
     // adds the given grade to the grades property
     public void addGrade(double grade){
         grades.add(grade);

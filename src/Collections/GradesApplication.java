@@ -23,9 +23,19 @@ public class GradesApplication {
             System.out.println(k);
 
         });
-        System.out.println("What student would you like to see more information on?");
+
+        System.out.println("What student would you like information on, or choose enter 'ALL' to see grades for all students");
         String input = scanner.nextLine();
-        if (list.get(input) == null){
+
+        if (input.equalsIgnoreCase("all")){
+
+            list.forEach((key, value) ->{
+                System.out.println("Student: " + value.getName());
+                value.printGrades();
+            });
+        }
+
+        else if (list.get(input) == null){
             System.out.println("Sorry, no student found with the gihub username of \""+ input + "\".");
 
         }
@@ -33,15 +43,20 @@ public class GradesApplication {
         else {
             System.out.println("Name :" + list.get(input).getName() + "  - Github Username:  " + input);
             System.out.println("Current Average:  " + list.get(input).getGradeAverage());
+            System.out.println("GRADES");
+            list.get(input).printGrades();
 
         }
+
         seeAnotherStudent(list);
     }
 
 
     public static void seeAnotherStudent(Map <String, Student> list){
         System.out.println("Would you like to see another student?");
+
         String input = scanner.nextLine();
+
         if (input.equalsIgnoreCase("y") || input.equalsIgnoreCase("yes")){
             printOutUsernames(list);
         }
@@ -49,6 +64,7 @@ public class GradesApplication {
             System.out.println("Goodbye, and have a wonderful day!");
             System.exit(0);
         }
+        scanner.next();
     }
 
 
