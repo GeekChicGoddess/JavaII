@@ -13,7 +13,7 @@ public class Student {
 
     public Student (String name){
         this.name = name;
-        this.grades = new ArrayList<Double>();
+        this.grades = new ArrayList<>();
     }
 
     // returns the student's name
