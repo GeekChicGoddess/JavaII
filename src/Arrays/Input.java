@@ -1,5 +1,6 @@
 package Arrays;
 
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 /**
@@ -7,7 +8,7 @@ import java.util.Scanner;
  */
 public class Input {
 
-    private Scanner scanner; // scanner property/attribute/field
+    public static Scanner scanner; // scanner property/attribute/field
 
     public Input() {
 
@@ -36,50 +37,69 @@ public class Input {
         else return false;
     };
 
-    public int getInt (int min, int max){
-         return getInt(min, max, "Enter an integer");
-    }
-
-    public int getInt(int min, int max, String prompt) {
-        boolean userGotItRight = false;
-        int userInput =0;
-        do {
-            System.out.println(prompt + " between " + min + " and " + max);
-
-            if(scanner.hasNextInt()) {//<-- get in if its a number
-                userInput = scanner.nextInt();
-                if (userInput >= min && userInput <= max){
-                    userGotItRight = true;
-                    scanner.nextLine();
-                    return userInput;
-                }
-            }
-            else {
-                scanner.next();
-            };
-        }while (!userGotItRight);
-
-        return userInput;
-    }
+//    public static int getInt (int min, int max){
+//         return getInt(min, max, "Enter an integer");
+//    }
+//
+//    public static int getInt(int min, int max, String prompt) {
+//
+//        while (true) {
+//            System.out.println(prompt + " between " + min + " and " + max);
+//
+//            String userInput = scanner.nextLine();
+//            if (userInput != null) {
+//                try {
+//                  int userInputToInt =  Integer.valueOf(userInput);
+//
+//                    if (userInputToInt >= min && userInputToInt <= max) {
+//                        return userInputToInt;
+//                    }
+//                } catch (InputMismatchException e) {
+//                    scanner.nextLine();
+//                    System.out.println("Entry was not an integer");
+//                }
+//            }
+//        }
+//    }
+//    public int getInt(int min, int max, String prompt) {
+//        boolean userGotItRight = false;
+//        int userInput =0;
+//        do {
+//            System.out.println(prompt + " between " + min + " and " + max);
+//
+//            if(scanner.hasNextInt()) {//<-- get in if its a number
+//                userInput = scanner.nextInt();
+//                if (userInput >= min && userInput <= max){
+//                    userGotItRight = true;
+//                    scanner.nextLine();
+//                    return userInput;
+//                }
+//            }
+//            else {
+//                scanner.next();
+//            };
+//        }while (!userGotItRight);
+//
+//        return userInput;
+//    }
 
     public int getInt() {
      return getInt("Enter an interger");
     }
 
     public int getInt(String prompt) {
-        boolean userGotItRight = false;
-        int userInput=0;
-        do {
-            System.out.println(prompt);
-            if (scanner.hasNextInt()) {//<-- get in if its a number
-                userInput = scanner.nextInt();
-                userGotItRight = true;
-            } else {
-                scanner.next();
-            }
-        } while (!userGotItRight);
 
-        return userInput;
+
+        while (true) {
+            System.out.println(prompt);
+            String input = scanner.next();
+            try {
+                 return Integer.valueOf(input);
+            }
+            catch (NumberFormatException e) {
+                System.out.println("Entry was not an integer");
+            }
+        }
     }
 
     public double getdouble(double min, double max) {

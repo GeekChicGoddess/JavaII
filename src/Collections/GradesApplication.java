@@ -94,9 +94,9 @@ public class GradesApplication {
         julian.addGrade(90);
         julian.addGrade(95);
         julian.addGrade(97);
-
-        System.out.println("Welcome");
-        getStudentInfo(students);
+//
+//        System.out.println("Welcome");
+//        getStudentInfo(students);
 
 
     }
