@@ -12,7 +12,7 @@ public class InputTest {
 
         Input test = new Input();
 
-        test.getInt();
+        test.getInt(7, 10);
 
     }
 

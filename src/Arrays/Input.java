@@ -37,30 +37,27 @@ public class Input {
         else return false;
     };
 
-//    public static int getInt (int min, int max){
-//         return getInt(min, max, "Enter an integer");
-//    }
-//
-//    public static int getInt(int min, int max, String prompt) {
-//
-//        while (true) {
-//            System.out.println(prompt + " between " + min + " and " + max);
-//
-//            String userInput = scanner.nextLine();
-//            if (userInput != null) {
-//                try {
-//                  int userInputToInt =  Integer.valueOf(userInput);
-//
-//                    if (userInputToInt >= min && userInputToInt <= max) {
-//                        return userInputToInt;
-//                    }
-//                } catch (InputMismatchException e) {
-//                    scanner.nextLine();
-//                    System.out.println("Entry was not an integer");
-//                }
-//            }
-//        }
-//    }
+    public static int getInt (int min, int max){
+         return getInt(min, max, "Enter an integer");
+    }
+
+    public static int getInt(int min, int max, String prompt) {
+
+        while (true) {
+            System.out.println(prompt + " between " + min + " and " + max);
+
+            String userInput = scanner.next();
+                try {
+                  int userInputToInt =  Integer.valueOf(userInput);
+
+                    if (userInputToInt >= min && userInputToInt <= max) {
+                        return userInputToInt;
+                    }
+                } catch (NumberFormatException e) {
+                    System.out.println("Entry was not an integer");
+                }
+            }
+        }
 //    public int getInt(int min, int max, String prompt) {
 //        boolean userGotItRight = false;
 //        int userInput =0;
