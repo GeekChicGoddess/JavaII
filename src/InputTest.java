@@ -12,7 +12,7 @@ public class InputTest {
 
         Input test = new Input();
 
-        test.getInt(7, 10);
+        test.getdouble(500, 600);
 
     }
 

@@ -58,34 +58,13 @@ public class Input {
                 }
             }
         }
-//    public int getInt(int min, int max, String prompt) {
-//        boolean userGotItRight = false;
-//        int userInput =0;
-//        do {
-//            System.out.println(prompt + " between " + min + " and " + max);
-//
-//            if(scanner.hasNextInt()) {//<-- get in if its a number
-//                userInput = scanner.nextInt();
-//                if (userInput >= min && userInput <= max){
-//                    userGotItRight = true;
-//                    scanner.nextLine();
-//                    return userInput;
-//                }
-//            }
-//            else {
-//                scanner.next();
-//            };
-//        }while (!userGotItRight);
-//
-//        return userInput;
-//    }
+
 
     public int getInt() {
      return getInt("Enter an interger");
     }
 
     public int getInt(String prompt) {
-
 
         while (true) {
             System.out.println(prompt);
@@ -99,27 +78,25 @@ public class Input {
         }
     }
 
-    public double getdouble(double min, double max) {
+    public double getdouble(double min, double max){
+       return getdouble(min, max, "Enter a double");
+    }
 
-        boolean userGotItRight = false;
-        double userInput=0;
 
-        do {
-            System.out.println("Enter a double between " + min + " and " + max);
+    public double getdouble(double min, double max, String prompt) {
 
-            if(scanner.hasNextDouble()) {//<-- get in if its a double
-                userInput = scanner.nextDouble();
-                if (userInput >= min && userInput <= max){
-                    userGotItRight = true;
-
+        while(true) {
+            System.out.println(prompt + " between " + min + " and " + max);
+            String userInput = scanner.next();
+            try {
+                double userInputToDouble = Integer.valueOf(userInput);
+                if (userInputToDouble >= min && userInputToDouble <= max) {
+                    return userInputToDouble;
                 }
+            } catch (NumberFormatException e) {
+                System.out.println("Entry was not an double");
             }
-            else {
-                scanner.next();
-            };
-        }while (!userGotItRight);
-
-        return userInput;
+        }
     }
 
     public double getdouble() {
@@ -127,23 +104,23 @@ public class Input {
     }
 
     public double getdouble(String prompt) {
-        boolean userGotItRight = false;
-        double userInput=0;
 
-        do {
+        while (true) {
+
             System.out.println(prompt);
+            String userInput = scanner.next();
 
-            if(scanner.hasNextDouble()) {//<-- get in if its a double
-                userInput = scanner.nextDouble();
-                userGotItRight = true;
+            try {
+                double userInputToDouble = Integer.valueOf(userInput);
+                return userInputToDouble;
             }
-            else {
-                scanner.next();
-            };
-        }while (!userGotItRight);
+            catch (NumberFormatException e) {
 
-        return userInput;
+            }
+                System.out.println("Entry was not an double");
+
+            }
+        }
+
+
     }
-
-
-}
