@@ -13,7 +13,7 @@ public class Contact {
         this.number = number;
     }
 
-    public String getName() {
+    public String getName(String name) {
         return name;
     }
 
@@ -21,7 +21,7 @@ public class Contact {
         this.name = name;
     }
 
-    public String getNumber() {
+    public String getNumber(String number) {
         return number;
     }
 
